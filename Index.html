@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nari Jagurata Abhiyan</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #0a0a0a, #242424);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        color: #fff;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.05);
+        width: 100%;
+        max-width: 400px;
+        padding: 25px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.15);
+        animation: fadeIn 1s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: #ffea00;
+        text-shadow: 0 0 10px #ffea00;
+      }
+
+      .btn-group {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .btn-group button {
+        width: 48%;
+        padding: 10px;
+        background: #ffea00;
+        border: none;
+        color: #000;
+        font-weight: 700;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .btn-group button:hover {
+        background: #fff56e;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(255, 255, 0, 0.6);
+      }
+
+      form {
+        display: none;
+        animation: slide 0.5s ease-out;
+      }
+
+      @keyframes slide {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+
+      label {
+        font-size: 0.9rem;
+        margin-top: 10px;
+        display: block;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        margin-top: 5px;
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        outline: none;
+      }
+
+      input:focus {
+        border: 2px solid #ffea00;
+      }
+
+      .submit-btn {
+        margin-top: 15px;
+        width: 100%;
+        padding: 10px;
+        background: #ffea00;
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .submit-btn:hover {
+        background: #fff56e;
+        transform: scale(1.05);
+      }
+
+      p {
+        text-align: center;
+        margin-top: 10px;
+        color: #ddd;
+        font-size: 0.85rem;
+        cursor: pointer;
+      }
+
+      p:hover {
+        color: #ffea00;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Nari Jagurata Abhiyan</h1>
+
+      <div class="btn-group">
+        <button onclick="showLogin()">Login</button>
+        <button onclick="showRegistration()">Registration</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm">
+        <label>Email or Phone Number</label>
+        <input type="text" placeholder="Enter Email or Phone" required />
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter Password" required />
+
+        <button class="submit-btn">Login</button>
+      </form>
+
+      <!-- REGISTRATION FORM -->
+      <form id="registrationForm">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter Your Name" required />
+
+        <label>Referral ID</label>
+        <input type="text" placeholder="Enter Referral ID" required />
+
+        <label>Email ID</label>
+        <input type="email" placeholder="Enter Email" required />
+
+        <label>Password</label>
+        <input type="password" placeholder="Create Password" required />
+
+        <label>Phone Number</label>
+        <input type="text" placeholder="Enter Phone Number" required />
+
+        <label>Address</label>
+        <input type="text" placeholder="Enter State/Address" required />
+
+        <button class="submit-btn">Register</button>
+      </form>
+    </div>
+
+    <script>
+      const loginForm = document.getElementById("loginForm");
+      const registrationForm = document.getElementById("registrationForm");
+
+      function showLogin() {
+        loginForm.style.display = "block";
+        registrationForm.style.display = "none";
+      }
+
+      function showRegistration() {
+        registrationForm.style.display = "block";
+        loginForm.style.display = "none";
+      }
+
+      // LOGIN REDIRECT
+      document
+        .querySelector("#loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          window.location.href = "dashboard.html"; // redirect to dashboard
+        });
+
+      // REGISTRATION REDIRECT
+      document
+        .querySelector("#registrationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          window.location.href = "dashboard.html"; // redirect to dashboard
+        });
+    </script>
+  </body>
+</html>

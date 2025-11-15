@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nari Jagurata - Dashboard</title>
+    <link rel="stylesheet" href="CSS/Dashboard.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">NJ</div>
+        <div>
+          <h1>Nari Jaagurata Abhiyan</h1>
+          <p class="sub">Member Dashboard</p>
+        </div>
+      </div>
+
+      <div class="user-mini">
+        <div class="user-ava">A</div>
+        <div class="user-name">Ankita</div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- PLAN CARD -->
+      <section class="plan-card card">
+        <div class="plan-left">
+          <h2>₹499 PLAN</h2>
+          <p class="muted">Activate to unlock benefits & income</p>
+          <div class="plan-features">
+            <span>Daily Rewards</span>
+            <span>Direct & Level Income</span>
+          </div>
+        </div>
+
+        <div class="plan-right">
+          <div id="planStatus" class="status-pill inactive">
+            <span class="dot"></span>
+            <span id="statusText">Non-active</span>
+          </div>
+
+          <button id="activateBtn" class="btn btn-primary">
+            Activate ₹499
+          </button>
+          <small class="hint">Click to activate. State saved locally.</small>
+        </div>
+      </section>
+
+      <!-- USER INFO -->
+      <section class="info-card card">
+        <div class="info-left">
+          <h3 id="userName">Name: SK Yadav</h3>
+          <p id="sponsorName">Sponsor: RS Yadav</p>
+        </div>
+
+        <div class="info-right">
+          <button id="editBtn" class="btn btn-ghost">Edit</button>
+        </div>
+      </section>
+
+      <!-- INCOME GRID -->
+      <section class="grid incomes">
+        <div class="income-card card" data-key="direct">
+          <div class="icon">⇢</div>
+          <div>
+            <h4>Direct Income</h4>
+            <p class="amt" id="directAmt">₹0</p>
+          </div>
+        </div>
+
+        <div class="income-card card" data-key="level">
+          <div class="icon">⤴</div>
+          <div>
+            <h4>Level Income</h4>
+            <p class="amt" id="levelAmt">₹0</p>
+          </div>
+        </div>
+
+        <div class="income-card card" data-key="repurchase">
+          <div class="icon">⟳</div>
+          <div>
+            <h4>Repurchase Income</h4>
+            <p class="amt" id="repurchaseAmt">₹0</p>
+          </div>
+        </div>
+
+        <div class="income-card card" data-key="reward">
+          <div class="icon">⭐</div>
+          <div>
+            <h4>Reward</h4>
+            <p class="amt" id="rewardAmt">₹0</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACTIONS -->
+      <!-- <section class="actions">
+        <button id="simulateBtn" class="btn btn-accent">
+          Simulate Income (Demo)
+        </button>
+        <button id="resetBtn" class="btn btn-danger">
+          Reset (Clear Local)
+        </button>
+      </section> -->
+    </main>
+
+    <script src="js/Dashboard.js"></script>
+  </body>
+</html>

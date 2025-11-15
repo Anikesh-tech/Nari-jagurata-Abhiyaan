@@ -1,0 +1,94 @@
+/* ---------------- GLOBAL DESIGN ---------------- */
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+/* ---------------- MAIN WRAPPER ---------------- */
+.wrapper {
+    position: relative;
+    width: 280px;
+    height: 280px;
+}
+
+/* ---------------- COLORFUL MOVING RING ---------------- */
+.ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    border-top: 6px solid #ff00ea;
+    border-right: 6px solid #00f7ff;
+    border-bottom: 6px solid #ffdd00;
+    border-left: 6px solid #00ff00;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------------- INNER CIRCLE ---------------- */
+.circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #111;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ---------------- TEXT STYLE ---------------- */
+.text {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.3;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 480px) {
+    .wrapper {
+        width: 220px;
+        height: 220px;
+    }
+
+    .circle {
+        width: 160px;
+        height: 160px;
+    }
+
+    .text {
+        font-size: 1.1rem;
+    }
+}
